@@ -50,14 +50,15 @@ The application will be available at `http://localhost:5000`
 4. Listen to or download your audiobook
 
 ## Project Structure
-dysassist/
-├── main.py # Main application file
-├── login.db # SQLite database
-├── static/ # Static files (CSS, images)
-├── templates/ # HTML templates
-├── uploads/ # User uploaded files
-│ └── audio/ # Generated audiobooks
-└── requirements.txt # Project dependencies
+console - bash
+    dysassist/
+    ├── main.py # Main application file
+    ├── login.db # SQLite database
+    ├── static/ # Static files (CSS, images)
+    ├── templates/ # HTML templates
+    ├── uploads/ # User uploaded files
+    │ └── audio/ # Generated audiobooks
+    └── requirements.txt # Project dependencies
 
 
 ## Security Features
