@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Sign Up</h2>
+        <form action="{{ url_for('add') }}" method="post" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="uname">Username</label>
+                <input type="text" id="uname" name="uname" required>
+            </div>
+            <div class="form-group">
+                <label for="psw">Password</label>
+                <input type="password" id="psw" name="psw" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm_psw">Confirm Password</label>
+                <input type="password" id="confirm_psw" name="confirm_psw" required>
+            </div>
+            {% if error %}
+            <div class="message error">{{ error }}</div>
+            {% endif %}
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+        </form>
+        <div class="links">
+            <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+            <a href="{{ url_for('home') }}" class="btn btn-back">Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+    function validateForm() {
+        var password = document.getElementById("psw").value;
+        var confirm_password = document.getElementById("confirm_psw").value;
+        
+        if (password != confirm_password) {
+            alert("Passwords do not match!");
+            return false;
+        }
+        return true;
+    }
+    </script>
+</body>
+</html>

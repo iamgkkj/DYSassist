@@ -1,0 +1,427 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-image: url('/static/images/1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.4);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 400px;
+    margin: 20px;
+    backdrop-filter: blur(10px);
+    animation: fadeIn 0.5s ease-out;
+}
+
+h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #1b84db;
+    outline: none;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s;
+    margin: 5px;
+    color: white !important;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #2196F3;
+    color: white !important;
+    width: 100%;
+}
+
+.btn-secondary {
+    background-color: #757575;
+    color: white !important;
+}
+
+.btn-back {
+    background-color: #f44336;
+    color: white !important;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.links a {
+    color: #2196F3;
+    text-decoration: none;
+    transition: all 0.8s ease;
+}
+
+.links a:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+/* Table Styles */
+.table-container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 800px;
+    margin: 20px;
+    backdrop-filter: blur(10px);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #2196F3;
+    color: white;
+}
+
+tr:hover {
+    background-color: rgba(33, 150, 243, 0.1);
+}
+
+/* */
+.container .btn-primary {
+    width: auto;
+    margin: 10px;
+    min-width: 150px;
+}
+
+.container .btn-secondary {
+    width: auto;
+    margin: 10px;
+    min-width: 150px;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.links a.btn {
+    color: white !important;
+    text-decoration: none;
+}
+
+.links a.btn:hover {
+    text-decoration: none;
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.links a:not(.btn) {
+    color: #165ab2;
+    text-decoration: none;
+}
+
+.links a:not(.btn):hover {
+    text-decoration: underline;
+}
+
+/* Add these new styles for file upload */
+.upload-container {
+    margin: 20px 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+}
+
+.upload-container h3 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
+
+.message {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.message.error {
+    background-color: rgba(244, 67, 54, 0.1);
+    color: #d32f2f;
+    border: 1px solid #ef5350;
+}
+
+.message.success {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: #388e3c;
+    border: 1px solid #66bb6a;
+}
+
+/* About page styles */
+.about-container {
+    max-width: 800px;
+}
+
+.tagline {
+    text-align: center;
+    font-size: 1.5em;
+    color: #3e81b9;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.about-logo {
+    display: block;
+    margin: 20px auto;
+    max-width: 200px;
+    height: auto;
+}
+
+.about-content {
+    margin: 20px 0;
+}
+
+.about-content h3 {
+    color: #165ab2;
+    margin: 25px 0 15px 0;
+}
+
+.about-content p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.about-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.about-content ul li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+}
+
+.about-content ul li:before {
+    content: "•";
+    color: #2196F3;
+    position: absolute;
+    left: 0;
+}
+
+.feature-images {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.feature-img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Add these new styles for audio section */
+.conversion-section {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.audio-section {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.audio-section h4 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+audio {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.audio-section .btn {
+    margin-top: 10px;
+}
+
+/* File Input Styling */
+.file-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.file-input-wrapper input[type="file"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.file-input-button {
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.file-input-text {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.file-input-wrapper:hover .file-input-button {
+    background-color: #1976D2;
+}
+
+/* Progress Bar Styling */
+.progress-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background-color: #2196F3;
+    transition: width 0.5s ease-in-out;
+    background-image: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.15) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.15) 50%,
+        rgba(255, 255, 255, 0.15) 75%,
+        transparent 75%,
+        transparent
+    );
+    background-size: 1rem 1rem;
+    animation: progress-animation 1s linear infinite;
+}
+
+.progress-text {
+    color: #666;
+    font-size: 0.9em;
+}
+
+@keyframes progress-animation {
+    0% {
+        background-position: 1rem 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+/* Add these animation keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Optional: Add transition for all elements */
+* {
+    transition: all 0.3s ease;
+}

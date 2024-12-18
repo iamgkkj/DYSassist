@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About - DYSassist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container about-container">
+        <h2>About DYSassist</h2>
+        <div class="tagline">"Read with Ease"</div>
+        
+        <div class="about-content">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="DYSassist Logo" class="about-logo">
+            
+            <h3>Our Mission</h3>
+            <p>DYSassist is dedicated to making reading accessible to everyone by converting documents into audiobooks. 
+            We understand that everyone learns differently, and for some, traditional reading can be challenging. 
+            That's why we've created a simple, user-friendly platform to convert your documents into audio format.</p>
+
+            <h3>What We Do</h3>
+            <p>Our application allows users to:</p>
+            <ul>
+                <li>Upload PDF and DOCX documents</li>
+                <li>Convert text documents into high-quality audio</li>
+                <li>Access your audiobooks anywhere, anytime</li>
+                <li>Manage your document library easily</li>
+            </ul>
+
+            <div class="feature-images">
+                <img src="{{ url_for('static', filename='images/feature1.jpg') }}" alt="Document Upload" class="feature-img">
+                <img src="{{ url_for('static', filename='images/feature2.jpg') }}" alt="Audio Conversion" class="feature-img">
+            </div>
+
+            <h3>How It Works</h3>
+            <p>Simply upload your document, and our system will convert it into clear, natural-sounding audio. 
+            Perfect for students, professionals, and anyone who prefers audio learning.</p>
+        </div>
+
+        <div class="links">
+            {% if from_welcome %}
+                <a href="{{ url_for('welcome') }}" class="btn btn-back">Back</a>
+            {% else %}
+                <a href="{{ url_for('home') }}" class="btn btn-back">Back to Home</a>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html> 

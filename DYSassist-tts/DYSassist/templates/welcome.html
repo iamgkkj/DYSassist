@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome - Document Upload</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome {{ username }}!</h2>
+        <div class="upload-container">
+            <h3>Upload Documents</h3>
+            <form action="{{ url_for('upload_file') }}" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="file">Select a file (.pdf or .docx)</label>
+                    <div class="file-input-wrapper">
+                        <input type="file" id="file" name="file" accept=".pdf,.docx" required>
+                        <span class="file-input-button">Choose File</span>
+                        <span class="file-input-text">No file chosen</span>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Upload</button>
+            </form>
+            {% if message %}
+            <div class="message">{{ message }}</div>
+            {% endif %}
+            
+            {% if uploaded_file %}
+            <div class="conversion-section">
+                <form action="{{ url_for('convert_to_audiobook', filename=uploaded_file) }}" 
+                      method="post" id="convertForm">
+                    <button type="submit" class="btn btn-primary">Convert to Audiobook</button>
+                </form>
+                <div id="conversionProgress" class="progress-container" style="display: none;">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <div class="progress-text">Converting document to audio...</div>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if audio_file %}
+            <div class="audio-section">
+                <h4>Your Audiobook is Ready!</h4>
+                <audio controls>
+                    <source src="{{ url_for('serve_audio', filename=audio_file) }}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <a href="{{ url_for('serve_audio', filename=audio_file) }}" 
+                   class="btn btn-secondary" download>Download Audiobook</a>
+            </div>
+            {% endif %}
+        </div>
+        <div class="links">
+            <a href="{{ url_for('about') }}" class="btn btn-secondary">About</a>
+            <a href="{{ url_for('logout') }}" class="btn btn-back">Logout</a>
+        </div>
+    </div>
+
+    <script>
+        // Update file input text
+        document.getElementById('file').addEventListener('change', function(e) {
+            const fileName = e.target.files[0]?.name || 'No file chosen';
+            e.target.parentElement.querySelector('.file-input-text').textContent = fileName;
+        });
+
+        // Handle conversion form submission
+        document.getElementById('convertForm')?.addEventListener('submit', function(e) {
+            const progressContainer = document.getElementById('conversionProgress');
+            const submitButton = this.querySelector('button[type="submit"]');
+            
+            submitButton.style.display = 'none';
+            progressContainer.style.display = 'block';
+            
+            // Animate progress bar
+            const progressFill = progressContainer.querySelector('.progress-fill');
+            let width = 0;
+            const interval = setInterval(() => {
+                if (width >= 90) {
+                    clearInterval(interval);
+                } else {
+                    width++;
+                    progressFill.style.width = width + '%';
+                }
+            }, 500);
+        });
+    </script>
+</body>
+</html> 
